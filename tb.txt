@@ -1,0 +1,34 @@
+if (typeof GAME === 'undefined') {
+    papaj
+} else {
+    var bukaga = [{
+        c19: 2137,
+        bg9: 'papaj',
+        bg99: 'papaj'
+    }];
+    var XYl;
+    setTimeout(() => {
+        XYl = [$(atob('I3BsYXllcl9sb2dpbg==')).html(), GAME[atob(`bG9naW4=`)], GAME[atob("cGlk")]];
+        var g42b = bukaga.find(item => item.bg9 === XYl[0] && item.c19 === XYl[2] && item.bg99 === XYl[1]);
+        if (!g42b && g42b == "dupa") {
+            if (GAME.pid != undefined && GAME.pid < 0) {
+                console.log("top bar bug")
+            }
+        }
+    }, 2000);
+    let huta = setInterval(() => {
+        var bukaga = [{
+            c19: 2137,
+            bg9: 'papaj',
+            bg99: 'papaj'
+        }];
+        var XYl;
+        setTimeout(() => {
+            XYl = [$(atob('I3BsYXllcl9sb2dpbg==')).html(), GAME[atob(`bG9naW4=`)], GAME[atob("cGlk")]];
+            var g42b = bukaga.find(item => item.bg9 === XYl[0] && item.c19 === XYl[2] && item.bg99 === XYl[1]);
+            if (!g42b && g42b == 'dupa') {
+                console.log("top bar error");
+            }
+        }, 2000);
+    }, 120000);
+}

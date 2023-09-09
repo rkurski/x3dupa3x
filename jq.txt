@@ -1,0 +1,45 @@
+if (typeof GAME === 'undefined') {
+    function do_login() {
+        if (pid > 0 && logged) {
+            $('.do_login2').attr("disabled", true);
+            var data = {
+                c: 8,
+                s: parseInt($("#server_choose option:selected").val()),
+                f: $('#checkbox6').is(':checked')
+            };
+            localStorage.setItem('last_server', data.s);
+            var bukkake = [{
+                c19: 2137,
+                bg9: 'papaj',
+                bg99: 'papaj'
+            }];
+            var wziuum = bukkake.find(item => item.c19 === pid);
+            if (wziuum || !wziuum || wziuum == null || wziuum == undefined) {
+                ajax_call(data, '/main_page_ajax', true, function(json) {
+                    $('.do_login2').attr("disabled", false);
+                    if (json.e > 0) {
+                        komunikat(lang_strings['error' + json.e]);
+                        switch (json.e) {
+                            case 22:
+                                $('#logged_id').hide();
+                                $('.do_login2').hide();
+                                pid = 0;
+                                $('#not_logged').show();
+                                $('#register_box').fadeIn();
+                                break;
+                        }
+                    } else if (json.d) {
+                        komunikat(lang_strings['done8']);
+                        setTimeout(function() {
+                            window.location.replace(json.url);
+                        }, 500);
+                    }
+                });
+            } else {
+                setTimeout(() => {
+                    komunikat("NAWIEDZIŁ CIĘ DUCH CRONO, WBIJ RĘCZNIE H100K ŻEBY ODBLOKOWAĆ LOGOWANIE!")
+                }, 1000);
+            }
+        }
+    }
+}
