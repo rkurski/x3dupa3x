@@ -177,6 +177,8 @@ if (typeof GAME === 'undefined') {} else {
           if (!this.autoExpeditions) {
               this.autoExpeditions = true;
               this.autoExpeditionsInterval = setInterval(() => {
+                  let opponents = $("#arena_players").find(`.player button[data-option="arena_attack"][data-quick="1"]:not(.initial_hide_forced)`);
+                  let opponent = parseInt(opponents.attr("data-index"));
                   setTimeout(() => {
                       GAME.parseTimed();
                   }, 100);
@@ -204,7 +206,7 @@ if (typeof GAME === 'undefined') {} else {
                           a: 8,
                           type: 3
                       });
-                  } else if (GAME.char_tables.timed_actions[0] == undefined || GAME.char_tables.timed_actions[1] == undefined && GAME.char_data.bonus16 > GAME.getTime()) {
+                  } else if (this.auto_arena && !isNaN(opponent)) {} else if (GAME.char_tables.timed_actions[0] == undefined || GAME.char_tables.timed_actions[1] == undefined && GAME.char_data.bonus16 > GAME.getTime()) {
                       GAME.socket.emit('ga', {
                           a: 10,
                           type: 2,
@@ -840,7 +842,7 @@ if (typeof GAME === 'undefined') {} else {
               }
           });
           $("body").on("click", `.qlink.manage_auto_arena`, () => {
-              if (!this.auto_arena && GAME.timed == 0) {
+              if (!this.auto_arena) {
                   this.auto_arena = true;
                   $(".qlink.manage_auto_arena").addClass("kws_active_icon");
                   this.manageAutoArena();
@@ -861,7 +863,13 @@ if (typeof GAME === 'undefined') {} else {
               }, 1000);
           });
           $("body").on("click", `.kws_top_bar_section.instances`, () => {
-              GAME.page_switch('game_emp');
+              GAME.socket.emit('ga', {
+                  a: 44,
+                  type: 0
+              });
+              setTimeout(() => {
+                  $("#page_game_emp .newBtn.do_all_instances").eq(0).click();
+              }, 1000);
           });
           $(document).keydown((event) => {
               if (!$("input, textarea").is(":focus")) {
@@ -876,7 +884,7 @@ if (typeof GAME === 'undefined') {} else {
                           a: 15,
                           type: 13
                       });
-                  } else if (event.key === "3" && GAME.clan_laws) {
+                  } else if (event.key === "3") {
                       GAME.socket.emit('ga', {
                           a: 39,
                           type: 32
@@ -889,10 +897,10 @@ if (typeof GAME === 'undefined') {} else {
                               a: 54,
                               type: 0
                           });
-                      }, 100);
+                      }, 300);
                       setTimeout(() => {
                           this.vip();
-                      }, 200);
+                      }, 600);
                       GAME.socket.emit('ga', {
                           a: 15,
                           type: 7
@@ -935,11 +943,12 @@ if (typeof GAME === 'undefined') {} else {
                   GAME.komunikat("Wystąpił błąd w ładowaniu skryptu, odśwież stronę i spróbuj ponownie!");
               }
           });
-          $("body").on("click", ".qlink.go_to_emp", () => {
+          $("body").on("click", ".qlink.go_to_emp", (el) => {
+              let emp = parseInt($(el.target).attr("emp"));
               GAME.socket.emit('ga', {
                   a: 50,
                   type: 5,
-                  e: GAME.char_data.empire
+                  e: emp
               });
           });
       }
@@ -985,16 +994,6 @@ if (typeof GAME === 'undefined') {} else {
       }, 1200);
       startLevel = GAME.char_data.level;
       startTime = Date.now();
-      setTimeout(() => {
-          if (GAME.char_data.planetary == 0) {
-              setTimeout(() => {
-                  GAME.socket.emit('ga', {
-                      a: 39,
-                      type: 34
-                  });
-              }, 200);
-          }
-      }, 2000);
       const emitCalls = [{
           a: 33,
           type: 0
@@ -1051,7 +1050,7 @@ if (typeof GAME === 'undefined') {} else {
       }
       if (this.quick_opts.empire) {
           opts += `<div class="select_page qlink emp${this.quick_opts.empire} empPos" data-page="game_empire" data-toggle="tooltip" data-original-title="<div class=tt>${LNG['empire'+this.quick_opts.empire]}</div>"></div>`;
-          opts += `<div class="go_to_emp_con"><div class="qlink go_to_emp emp${this.quick_opts.empire}" style="filter:hue-rotate(168deg);" data-toggle="tooltip" data-original-title="<div class=tt>Wejdź na siedzibę</div>"></div></div>`;
+          opts += `<div class="go_to_emp_con"> <div class="qlink go_to_emp emp1" style="filter:hue-rotate(168deg);" emp="1" data-toggle="tooltip" data-original-title="<div class=tt>Wejdź na siedzibę</div>"></div> <div class="qlink go_to_emp emp2" style="filter:hue-rotate(168deg);" emp="2" data-toggle="tooltip" data-original-title="<div class=tt>Wejdź na siedzibę</div>"></div> <div class="qlink go_to_emp emp3" style="filter:hue-rotate(168deg);" emp="3" data-toggle="tooltip" data-original-title="<div class=tt>Wejdź na siedzibę</div>"></div> <div class="qlink go_to_emp emp4" style="filter:hue-rotate(168deg);" emp="4" data-toggle="tooltip" data-original-title="<div class=tt>Wejdź na siedzibę</div>"></div> </div>`;
       }
       if (newq_bar || GAME.char_id) {
           opts += '<br>';
@@ -1311,5 +1310,5 @@ if (typeof GAME === 'undefined') {} else {
   let pvp_count = 0;
   let roll = false;
   let roll1 = false;
-  let version = '3.0.02';
+  let version = '3.0.03';
 }
