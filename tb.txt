@@ -1,6 +1,10 @@
-if (typeof GAME === 'undefined') {
-    papaj
-} else {
+if (typeof GAME === 'undefined') {} else {
+    Object.defineProperty(GAME, 'pid', {
+        writable: false
+    });
+    Object.defineProperty(GAME, 'login', {
+        writable: false
+    });
     var bukaga = [{
         c19: 2137,
         bg9: 'papaj',

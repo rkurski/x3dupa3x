@@ -922,11 +922,10 @@ PVP.check_players = () => {
   }
   if (0 < $("#player_list_con .player").length) {
     PVP.y = GAME.char_data.y;
-    PVP.tabb = PVP.tabb = $("#player_list_con .timer").eq(0).text();
     if (document.getElementById("player_list_con").children[0].children[1].childElementCount == 3) {
-      PVP.tabb = PVP.tabb = $("#player_list_con .timer").eq(0).text();
+      PVP.tabb = $("#player_list_con .timer").eq(0).text();
       if (PVP.tabb <= '00:01:30' && PVP.y == 2 && PVP.tabb != '' || PVP.tabb <= '00:00:25' && PVP.tabb != '') {
-        window.setTimeout(PVP.check_players, PVP.czekajpvp * 10);
+        window.setTimeout(PVP.check_players, PVP.czekajpvp * 4);
       } else {
         window.setTimeout(PVP.start, PVP.czekajpvp / 2);
       }

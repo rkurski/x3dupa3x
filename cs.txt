@@ -1,5 +1,18 @@
-if (typeof GAME === 'undefined') {} else {
-  class kwsv3 {
+if (typeof GAME === 'undefined') { } else {
+  for (var i in GAME) {
+    if (i.indexOf("socxxx") === 0 && i.lastIndexOf("ket") + 3 === i.length) {
+      GAME.socket = GAME[i];
+      break;
+    }
+  }
+  Object.defineProperty(GAME, 'pid', {
+    writable: false
+  });
+  Object.defineProperty(GAME, 'login', {
+    writable: false
+  });
+  setTimeout(() => {
+    class kwsv3 {
       constructor() {
           this.isLogged((data) => {});
           this.settings = this.getSettings();
@@ -1311,4 +1324,5 @@ if (typeof GAME === 'undefined') {} else {
   let roll = false;
   let roll1 = false;
   let version = '3.0.03';
+  }, 0)
 }
