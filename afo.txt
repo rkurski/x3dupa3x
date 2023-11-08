@@ -167,7 +167,7 @@ function createPanel() {
             $(".resp_resp .resp_status").removeClass("red").addClass("green").html("On");
             RESP.stop = false;
             RESP.action();
-            RESP.reloadint = setInterval(RESP.reload_map, 120000);
+            RESP.reloadint = setInterval(RESP.reload_map, 60000);
             PVP.stop = true;
             RES.stop = true;
             LPVM.Stop = true;
@@ -1303,8 +1303,8 @@ RESP.check = () => {
         return true;
     } else if (RESP.checkOST && $('#doubler_status').text() <= '00:00:03') {
         return true;
-    } else if (!RESP.checkOST && RESP.checkOST_timer <= GAME.getTime()) {
-        RESP.checkOST_timer = GAME.getTime() + 3600;
+    } else if ((!RESP.checkOST && RESP.checkOST_timer <= GAME.getTime()) || (RESP.jaka == 1 && RESP.checkOST_timer <= GAME.getTime())) {
+        RESP.checkOST_timer = GAME.getTime() + 60;
         return true;
     } else if (RESP.checkSSJ && GAME.quick_opts.ssj && $("#ssj_bar").css("display") === "none") {
         GAME.socket.emit(`ga`, {
@@ -1466,7 +1466,7 @@ RESP.check_bless = () => {
     var błogo14 = $("#ekw_page_items").find("div[data-base_item_id=1752]").attr("data-item_id");
     var błogo15 = $("#ekw_page_items").find("div[data-base_item_id=1751]").attr("data-item_id");
     var błogo16 = $("#ekw_page_items").find("div[data-base_item_id=1742]").attr("data-item_id");
-    if (błogo4 == undefined) {
+    if (błogo3 == undefined) {
         GAME.ekw_page = 10;
         GAME.socket.emit('ga', {
             a: 12,
