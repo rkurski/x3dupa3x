@@ -1,4 +1,5 @@
 // i9NbF3G8yQuH7pS
+
 function createPanel() {
     const css = ` #main_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 100px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #main_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #main_Panel .gh_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
     const csspvp = ` #pvp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 240px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #pvp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #pvp_Panel .pvp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input input::placeholder {color: #4b4b4b;}`;
@@ -583,6 +584,10 @@ function createPanel() {
             $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
             LPVM.Stop = true;
         }
+    });
+    $('#lpvm_Panel .pvm_killed').click(() => {
+        LPVM.pvm_killed = 0;
+        LPVM.UpdateKilledCounter(LPVM.pvm_killed);
     });
     $('#lpvm_Panel .lpvm_g').click(() => {
         if ($(".lpvm_g .lpvm_status").hasClass("red")) {
@@ -1466,7 +1471,7 @@ RESP.check_bless = () => {
     var błogo14 = $("#ekw_page_items").find("div[data-base_item_id=1752]").attr("data-item_id");
     var błogo15 = $("#ekw_page_items").find("div[data-base_item_id=1751]").attr("data-item_id");
     var błogo16 = $("#ekw_page_items").find("div[data-base_item_id=1742]").attr("data-item_id");
-    if (błogo3 == undefined) {
+    if (GAME.ekw_page != 10) {
         GAME.ekw_page = 10;
         GAME.socket.emit('ga', {
             a: 12,
