@@ -953,6 +953,27 @@ if (typeof GAME === 'undefined') {} else {
                         }
                         GAME.spawner[0] = pa;
                     }
+                    calcLVL(exp) {
+                        let lvls_gained = 0;
+                        let clvl = GAME.char_data.level;
+                        let cexp = GAME.char_data.exp + exp;
+                        let next = GAME.nextLevelExp(clvl, GAME.char_data.reborn);
+                        if (GAME.char_data.reborn >= 2) {
+                            while (cexp >= next && clvl < 100000) {
+                                clvl++;
+                                lvls_gained++;
+                                cexp -= next;
+                                next = GAME.nextLevelExp(clvl, GAME.char_data.reborn);
+                            }
+                        } else {
+                            while (cexp >= next && clvl < 1250) {
+                                clvl++;
+                                lvls_gained++;
+                                next = GAME.nextLevelExp(clvl, GAME.char_data.reborn);
+                            }
+                        }
+                        return `<b class="orange">[~${lvls_gained} lvl'i]</b>`;
+                    }
                     handleSockets(res) {
                         if (!this.stopped) {
                             if (res.a === 7 && "result" in res && res.result && "reward" in res.result && res.result.reward && "arena_exp" in res.result.reward && res.result.reward.arena_exp && res.result.result === 1) {
@@ -1555,7 +1576,7 @@ if (typeof GAME === 'undefined') {} else {
                             if (quest.prize.hasOwnProperty("add")) quest.prize.add = parseInt(quest.prize.add * ratio);
                             con += '<div class="quest_desc"><b>' + LNG.lab21 + '</b>:<br />' + this.quest_prize(quest.prize) + ' ' + extr + '</div>';
                         } else {
-                            con += '<div class="quest_desc"><b>' + LNG.lab21 + '</b>:<br />' + this.quest_prize(quest.prize) + '</div>';
+                            con += `<div class="quest_desc"><b>${LNG.lab21}</b>:<br />${this.quest_prize(quest.prize)} ${quest.prize.type === 40 ? kws.calcLVL(quest.prize.exp) : ""}</div>`;
                         }
                         if (quest.prize.type >= 99) conf = 'data-confirm="1"';
                     }
@@ -1692,7 +1713,7 @@ if (typeof GAME === 'undefined') {} else {
                 let roll = false;
                 let roll1 = false;
                 let roll2 = false;
-                let version = '3.0.08';
+                let version = '3.0.09';
         }, 0);
     }
 }, 10);
