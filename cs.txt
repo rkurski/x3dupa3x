@@ -39,6 +39,7 @@ if (typeof GAME === 'undefined') {} else {
                         this.addToCSS(`.kom{background:url(/gfx/layout/tloPilot.png); background-size:cover; border-image:url(/gfx/layout/mapborder.png) 7 8 7 7 fill; border-style:solid; border-width:7px 8px 7px 7px; box-shadow:none;} .kom .close_kom b{background:url(/gfx/layout/tloPilot.png);} .exchange_win{max-height:500; height:auto;}`);
                         this.addToCSS(`#emp_list .petopt_btns .newBtn{margin:0px 3px 3px 0px;} .newBtn.do_all_instances{color:#e5d029;}`);
                         this.addToCSS(`#quick_bar{z-index:4;} .qlink.kws_active_icon{animation-name:kws_active_icon;animation-duration:1s;animation-iteration-count:infinite;}@keyframes kws_active_icon { 0% { filter: hue-rotate(168deg); } 50% { filter:hue-rotate(40deg); } 100% { filter: hue-rotate(168deg); } } .sideIcons{ width:29px; height:29px; left:-37px; background-size:contain; } .autoExpeCodes{background:#12121294; border:1px solid rgb(87, 87, 114); border-radius:5px 0px 0px 5px; position:absolute; top:-100px; left:-97px; padding:5px; display:none; color:#ffe500c7; user-select:none;} .manage_autoExpeditions:hover + .autoExpeCodes, .autoExpeCodes:hover{ display:flex; } .autoExpeCodes .newCheckbox{margin: 0 auto; display: block;} `);
+                        this.addToCSS(`#secondary_char_stats .instance{margin-top:10px; cursor:pointer;} #secondary_char_stats .activities{margin-top:-5px; cursor:pointer;} #secondary_char_stats ul {margin-top:-18px; margin-left:-18px;} .ico.a11{background:url("https://nonono.cba.pl/app/src/images/instances.png"); background-repeat: no-repeat; background-size: inherit; background-position: center;} .ico.a12{background-image: url(https://nonono.cba.pl/app/src/images/activity.png); background-repeat: no-repeat; background-size: inherit; background-position: center;}`);
                         this.addToCSS(`.ssj_uio{background:url("https://i.imgur.com/EcfEUcG.png");}`);
                         this.addToCSS(`#quick_allTransformations { position:absolute; top:33px; z-index:1; background:rgb(0 0 0 / 59%); display:none; flex-direction: column-reverse; padding:5px 5px 0px 5px; border-radius:5px; box-shadow:0px 0px 5px 0px rgb(32 96 185);} .show_qat:hover + #quick_allTransformations, #quick_allTransformations:hover { display:flex; } #quick_allTransformations .option { display:block; margin:0px 0px 5px 0px; }`);
                         this.addToCSS(`#player_list_con .glory_rank.war{animation:none !important;background-color:rgb(22 83 106);box-shadow:0px 0px 7px 0px rgb(0 253 255);} .player_clan.enemy img{animation:none !important;box-shadow:0px 0px 10px 1px rgb(0 253 255);}`);
@@ -673,7 +674,11 @@ if (typeof GAME === 'undefined') {} else {
                         let received = $("#act_prizes").find("div.act_prize.disabled").length;
                         let is_trader = new Date();
                         let trader = `<span class='kws_top_bar_section trader_info' style='cursor:pointer;'>HANDLARZ</span> `;
-                        let innerHTML = ` <span class='kws_top_bar_section sk_info' style='cursor:pointer;'>SK: <span>${sk_status}</span></span> <span class='kws_top_bar_section train_upgr_info' style='cursor:pointer;'>KODY: <span>${train_upgr}</span></span> <span class='kws_top_bar_section instances' style='cursor:pointer;'>Instancje: <span>${sum_instances}/12</span></span> <span class='kws_top_bar_section activities' style='cursor:pointer;'>Aktywności: <span>${activity}/185 (${received}/5)</span></span><span class='kws_top_bar_section lvl' style='cursor:pointer;'>LVL: <span>${lvlh}/H</span></span><span class='kws_top_bar_section pvp' style='cursor:pointer;'>PVP: <span>${pvp_count}</span></span><span class='kws_top_bar_section arena' style='cursor:pointer;'>ARENA: <span>${arena_count}</span></span> ${is_trader.getDay() == 6 ? trader : ''}<span class='kws_top_bar_section version' style='cursor:pointer;'>Wersja: <span>${version}</span></span> `;
+                        let instance = `${sum_instances}/12`;
+                        $("#secondary_char_stats .instance ul").html(instance);
+                        let activities = `${activity}/185 (${received}/5)`;
+                        $("#secondary_char_stats .activities ul").html(activities);
+                        let innerHTML = ` <span class='kws_top_bar_section sk_info' style='cursor:pointer;'>SK: <span>${sk_status}</span></span> <span class='kws_top_bar_section train_upgr_info' style='cursor:pointer;'>KODY: <span>${train_upgr}</span></span><span class='kws_top_bar_section lvl' style='cursor:pointer;'>LVL: <span>${lvlh}/H</span></span><span class='kws_top_bar_section pvp' style='cursor:pointer;'>PVP: <span>${pvp_count}</span></span><span class='kws_top_bar_section arena' style='cursor:pointer;'>ARENA: <span>${arena_count}</span></span> ${is_trader.getDay() == 6 ? trader : ''}<span class='kws_top_bar_section version' style='cursor:pointer;'>Wersja: <span>${version}</span></span> `;
                         $(".kws_top_bar").html(innerHTML);
                     }
                     collectActivities() {
@@ -1118,7 +1123,7 @@ if (typeof GAME === 'undefined') {} else {
                         $("body").on("click", `.qlink.manage_autoExpeditions`, () => {
                             this.manageAutoExpeditions();
                         });
-                        $("body").on("click", `.kws_top_bar_section.activities`, (event) => {
+                        $("body").on("click", `#secondary_char_stats .activities`, (event) => {
                             GAME.socket.emit('ga', {
                                 a: 49,
                                 type: 0
@@ -1127,7 +1132,7 @@ if (typeof GAME === 'undefined') {} else {
                                 this.collectActivities();
                             }, 1000);
                         });
-                        $("body").on("click", `.kws_top_bar_section.instances`, () => {
+                        $("body").on("click", `#secondary_char_stats .instance`, () => {
                             GAME.socket.emit('ga', {
                                 a: 44,
                                 type: 0
@@ -1316,6 +1321,7 @@ if (typeof GAME === 'undefined') {} else {
                                     break;
                             }
                         });
+                        $("#secondary_char_stats").append(` <div class="instance" data-toggle="tooltip" data-original-title="<div class=tt>Instancje <br /><span class=&quot;red&quot;><b>Kliknij by wykonać instancje</b></span></div>" class=""><i class="ico a11"></i> <span> <ul><ul/></span></div> <div class="activities" data-toggle="tooltip" data-original-title="<div class=tt>Aktywności <br /><span class=&quot;red&quot;><b>Kliknij by odebrać aktywności</b></span></div>" class=""><i class="ico a12"></i> <span> <ul><ul/></span></div>`);
                         $("body").on('change', '.autoExpeCodes input[type=checkbox]', (el) => {
                             let name = $(el.target).attr("name");
                             if (name === 'aeCodes') {
@@ -1385,7 +1391,7 @@ if (typeof GAME === 'undefined') {} else {
                     $('#train_uptime').html(GAME.showTimer(GAME.char_data.train_ucd - GAME.getTime()));
                     setTimeout(() => {
                         if (kws.check_act()) {
-                            $(" .kws_top_bar_section.activities").click();
+                            $("#secondary_char_stats .activities").click();
                         }
                     }, 600);
                     GAME.parseQuickOpts(1);
