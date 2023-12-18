@@ -1382,7 +1382,7 @@ if (typeof GAME === 'undefined') {} else {
                         a: 29,
                         type: 0
                     }];
-                    let cd = [100, 150, 200];
+                    let cd = [200, 300, 400];
                     emitCalls.forEach((data, i) => {
                         setTimeout(() => {
                             GAME.socket.emit('ga', data);
@@ -1719,7 +1719,7 @@ if (typeof GAME === 'undefined') {} else {
                 let roll = false;
                 let roll1 = false;
                 let roll2 = false;
-                let version = '3.0.09';
+                let version = '3.0.10';
         }, 0);
     }
 }, 10);

@@ -4,11 +4,11 @@ function createPanel() {
     const css = ` #main_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 100px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #main_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #main_Panel .gh_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
     const csspvp = ` #pvp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 240px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #pvp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #pvp_Panel .pvp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input input::placeholder {color: #4b4b4b;}`;
     const cssresp = ` #resp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 100px; right: 155px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #resp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #resp_Panel .resp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
-    const csscode = ` #code_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 596px; right: 5px; z-index: 9999; width: 180px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #code_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 180px; cursor: all-scroll; } #code_Panel .code_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
+    const csscode = ` #code_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 623px; right: 5px; z-index: 9999; width: 180px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #code_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 180px; cursor: all-scroll; } #code_Panel .code_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
     const cssres = ` #res_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 532px; right: 155px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #res_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #res_Panel .res_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #res_Panel ul {margin-left:-30px; color:white; margin:7px 0px 5px 0px; padding: 0px; text-align: center;} `;
-    const csslpvm = ` #lpvm_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 387px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #lpvm_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #lpvm_Panel .lpvm_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #lpvm_Panel .pvm_killed {cursor:pointer;text-align:center; border-LGtom:solid gray 1px;text-align:center; color:white;} #lpvm_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} `;
+    const csslpvm = ` #lpvm_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 414px; right: 5px; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #lpvm_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #lpvm_Panel .lpvm_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #lpvm_Panel .pvm_killed {cursor:pointer;text-align:center; border-LGtom:solid gray 1px;text-align:center; color:white;} #lpvm_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} `;
     const html = ` <div id="main_Panel"> <div class="sekcja panel_dragg">ALL FOR ONE</div> <div class='gh_button gh_resp'>PVM<b class='gh_status red'>Off</b></div> <div class='gh_button gh_pvp'>PVP<b class='gh_status red'>Off</b></div> <div class='gh_button gh_lpvm'>Listy<b class='gh_status red'>Off</b></div> <div class='gh_button gh_res'>Zbierajka<b class='gh_status red'>Off</b></div> <div class='gh_button gh_code'>Kody<b class='gh_status red'>Off</b></div> </div> `;
-    const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_Code'>Kody<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_WI'>Wojny Imp<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status green'>On</b></div> <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" onblur="PVP.getVal()" name='pvp_capt' value='' /></div> </div> `;
+    const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_Code'>Kody<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_WI'>Wojny Imp<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status green'>On</b></div> <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" onblur="PVP.getVal()" name='pvp_capt' value='' /></div> <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Szybkość 10-100" onblur="PVP.getVal2()" name='speed_capt' value='50' /></div> </div> `;
     const RESP_panel = ` <div id="resp_Panel"> <div class="sekcja resp_dragg">SPAWN MOBKóW</div> <div class="resp_button resp_resp">RESP<b class="resp_status red">Off</b></div> <div class="resp_button resp_code">Kody<b class="resp_status green">On</b></div> <div class="resp_button resp_sub">Subka<b class="resp_status green">On</b></div> <div class="resp_button resp_ost">Jaka<b class="resp_status green">Ost</b></div> <div class="resp_button resp_multi">Multiwalka<b class="resp_status green">On</b></div> <div class="resp_button resp_ssj">SSJ<b class="resp_status green">On</b></div> <div class="resp_button resp_blue">BLUE<b class="resp_status red">Off</b></div> <div class="resp_button resp_green">GREEN<b class="resp_status red">Off</b></div> <div class="resp_button resp_purple">PURPLE<b class="resp_status red">Off</b></div> <div class="resp_button resp_yellow">YELLOW<b class="resp_status red">Off</b></div> <div class="resp_button resp_red">RED<b class="resp_status red">Off</b></div> <div class="resp_button resp_magic">Wyciąg<b class="resp_status red">Off</b></div> <div class="resp_button resp_bless">BŁOGO<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh1">SMOK<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh2">5% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh3">5% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh4">150K MAX<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh5">5% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh6">5% PSK<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh7">200% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh8">500 LVL<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh9">500% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh10">25% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_on">Włącz All<b class="resp_status green">On</b></div> <div class="resp_button resp_off">Wyłącz All<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh11">100% Limit<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh14">100% Limit<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh12">200% Przyrost<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh13">300% Przyrost<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh15">5% kod<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh16">5 Min cd pvp <b class="resp_status red">Off</b></div> </div> `;
     const CODE_panel = ` <div id="code_Panel"> <div class="sekcja code_dragg">Kody</div> <div class="code_button code_code">KODY<b class="code_status red">Off</b></div> <div class="code_button code_acc">Konto<b class="code_status red">Off</b></div> <div class="code_button code_zast">Zastępstwa<b class="code_status red">Off</b></div> <label class='select_input'><select id='bot_what_to_train'><option value='1'>Siła</option><option value='2'>Szybkość</option><option value='3'>Wytrzymałość</option><option value='4'>Siła Woli</option><option value='5'>Energia Ki</option><option value='6'>Wtajemniczenie</option></select></label> <label class='select_input'><select id='bot_what_to_traintime'><option value='1'>1 godz.</option><option value='2'>2 godz.</option><option value='3'>3 godz.</option><option value='4'>4 godz.</option><option value='5'>5 godz.</option><option value='6'>6 godz.</option><option value='7'>7 godz.</option><option value='8'>8 godz.</option><option value='9'>9 godz.</option><option value='10'>10 godz.</option><option value='11'>11 godz.</option><option value='12'>12 godz.</option></label> </div> `;
     const RES_panel = ` <div id="res_Panel"> <div class="sekcja res_dragg">SUROWCE</div> <div class="res_button res_res">ZBIERAJ<b class="res_status red">Off</b></div> <div class="bt_cool" style="text-align:center; color:white;"></div> <ul></ul> </div> `;
@@ -143,6 +143,7 @@ function createPanel() {
         }
     });
     $("#pvp_Panel input[name=pvp_capt]").val(PVP.clan_list);
+    $("#pvp_Panel input[name=speed_capt]").val(PVP.speed);
     $(document).bind('keydown', '1', function() {
         if (JQS.chm.is(":focus") == false) {
             if ($(".gh_resp .gh_status").hasClass("green")) {
@@ -170,12 +171,10 @@ function createPanel() {
             RESP.action();
             RESP.reloadint = setInterval(RESP.reload_map, 60000);
             PVP.stop = true;
-            RES.stop = true;
             LPVM.Stop = true;
             CODE.stop = true;
             $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
             $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-            $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
             $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
         } else {
             $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
@@ -667,14 +666,12 @@ function createPanel() {
             $(".res_res .res_status").removeClass("red").addClass("green").html("On");
             RES.stop = false;
             RES.Start();
-            RESP.stop = true;
             PVP.stop = true;
             LPVM.Stop = true;
             CODE.stop = true;
             $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
             $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
             $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
-            $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
         } else {
             $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
             RES.stop = true;
@@ -787,6 +784,7 @@ var PVP = {
     wait: 10,
     wait2: 80,
     czekajpvp: 160,
+    WSP: 50,
     licznik: 0,
     dogory: false,
     loc: 0,
@@ -859,7 +857,7 @@ PVP.start = () => {
         }
         PVP.action();
     } else if (GAME.is_loading) {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else {}
 };
 PVP.action = () => {
@@ -931,32 +929,32 @@ PVP.check_players = () => {
         if (document.getElementById("player_list_con").children[0].children[1].childElementCount == 3) {
             PVP.tabb = $("#player_list_con .player").eq(0).find(".timer").text();
             if (PVP.tabb <= '00:01:30' && PVP.y == 2 && PVP.tabb != '' || PVP.tabb <= '00:00:25' && PVP.tabb != '') {
-                window.setTimeout(PVP.check_players, PVP.czekajpvp * 4);
+                window.setTimeout(PVP.check_players, PVP.czekajpvp / PVP.WSPP() * 4);
             } else {
-                window.setTimeout(PVP.start, PVP.czekajpvp / 2);
+                window.setTimeout(PVP.start, PVP.czekajpvp / PVP.WSPP() / 2);
             }
         } else {
-            window.setTimeout(PVP.start, PVP.czekajpvp / 2);
+            window.setTimeout(PVP.start, PVP.czekajpvp / PVP.WSPP() / 2);
         }
     } else {
-        window.setTimeout(PVP.start, PVP.wait * 2);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP() * 2);
     }
     PVP.licznik = 1;
 };
 PVP.check_players2 = () => {
     var enemy = $("#player_list_con").find(".player button" + "[data-quick=1]" + ":not(.initial_hide_forced)");
     PVP.kill_players1();
-    window.setTimeout(PVP.start, PVP.czekajpvp * (enemy.length) * 2);
+    window.setTimeout(PVP.start, PVP.czekajpvp / PVP.WSPP() * (enemy.length) * 2);
     PVP.licznik = 1;
 };
 PVP.kill_players = () => {
     var enemy = $("#player_list_con").find(".player button" + "[data-quick=1]" + ":not(.initial_hide_forced)");
     if ($("#player_list_con").find("[data-option=load_more_players]").length == 1) {
         $("#player_list_con").find("[data-option=load_more_players]").click();
-        window.setTimeout(PVP.kill_players, PVP.czekajpvp);
+        window.setTimeout(PVP.kill_players, PVP.czekajpvp / PVP.WSPP());
     } else if (enemy.length == 0) {
         PVP.kill_players1();
-        window.setTimeout(PVP.start, PVP.czekajpvp * (enemy.length) * 2);
+        window.setTimeout(PVP.start, PVP.czekajpvp / PVP.WSPP() * (enemy.length) * 2);
     } else if (PVP.licznik < $("#player_list_con .player").length) {
         if ($("#player_list_con .player").eq(PVP.licznik).find("[data-quick=1]").attr("data-option").includes("gxxx")) {
             GAME.socket.emit('ga', {
@@ -966,7 +964,7 @@ PVP.kill_players = () => {
                 quick: 1
             });
             PVP.licznik++;
-            window.setTimeout(PVP.kill_players, PVP.czekajpvp);
+            window.setTimeout(PVP.kill_players, PVP.czekajpvp / PVP.WSPP());
         } else {
             GAME.socket.emit('ga', {
                 a: 24,
@@ -974,10 +972,10 @@ PVP.kill_players = () => {
                 quick: 1
             });
             PVP.licznik++;
-            window.setTimeout(PVP.kill_players, PVP.czekajpvp);
+            window.setTimeout(PVP.kill_players, PVP.czekajpvp / PVP.WSPP());
         }
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
         PVP.licznik = 0;
         kom_clear();
     }
@@ -1061,10 +1059,10 @@ PVP.wojny1 = () => {
             });
             window.setTimeout(PVP.wojny1, 500);
         } else {
-            window.setTimeout(PVP.start, PVP.wait);
+            window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
         }
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.zejdz = () => {
@@ -1116,7 +1114,7 @@ PVP.go = () => {
     } else if (x == 14 || x == 2 && PVP.loc < 5 || x == 15 && PVP.loc == 6 || x == 1 || x == 11 && PVP.loc == 5 || x == 2 && PVP.loc == 5) {
         PVP.go_down();
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.teleport = () => {
@@ -1129,25 +1127,25 @@ PVP.teleport = () => {
         window.setTimeout(PVP.start, 2000);
         PVP.tele = false;
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.check_location = () => {
     if (GAME.char_data.loc == 351) {
         PVP.loc = 4;
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else if (GAME.char_data.loc == 350) {
         PVP.loc = 3;
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else if (GAME.char_data.loc == 349) {
         PVP.loc = 2;
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else if (GAME.char_data.loc == 348) {
         PVP.loc = 1;
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else {
         PVP.loc = 7;
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.cofanie = () => {
@@ -1160,7 +1158,7 @@ PVP.cofanie = () => {
             dir: 7,
             vo: GAME.map_options.vo
         });
-        window.setTimeout(PVP.cofanie, 150);
+        window.setTimeout(PVP.cofanie, 150 / PVP.WSPP());
     }
 };
 PVP.prawodol = () => {
@@ -1169,7 +1167,7 @@ PVP.prawodol = () => {
         dir: 3,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.prawogora = () => {
     GAME.emitOrder({
@@ -1177,7 +1175,7 @@ PVP.prawogora = () => {
         dir: 5,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.go_up = () => {
     GAME.emitOrder({
@@ -1185,7 +1183,7 @@ PVP.go_up = () => {
         dir: 2,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.go_down = () => {
     GAME.emitOrder({
@@ -1193,7 +1191,7 @@ PVP.go_down = () => {
         dir: 1,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.go_left = () => {
     GAME.emitOrder({
@@ -1201,7 +1199,7 @@ PVP.go_left = () => {
         dir: 8,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.go_right = () => {
     GAME.emitOrder({
@@ -1209,20 +1207,20 @@ PVP.go_right = () => {
         dir: 7,
         vo: GAME.map_options.vo
     });
-    window.setTimeout(PVP.start, PVP.wait2);
+    window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
 };
 PVP.check = () => {
     if ($("#ewar_list").text().includes("--:--:--")) {
         window.setTimeout(PVP.check, 300);
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.check2 = () => {
     if (PVP.checkkkk()) {
         window.setTimeout(PVP.check2, 3700);
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
 };
 PVP.getVal = () => {
@@ -1248,10 +1246,32 @@ PVP.dec_wars = () => {
             type: 24,
             shorts: wars
         });
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     } else {
-        window.setTimeout(PVP.start, PVP.wait);
+        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
     }
+};
+PVP.getVal2 = () => {
+    PVP.WSP = parseInt($("#pvp_Panel input[name=speed_capt]").val());
+    PVP.save_speed();
+};
+PVP.speed = () => {
+    var list = localStorage.getItem('pvp_speed');
+    PVP.WSP = parseInt(list);
+    if (list === undefined) {
+        list = "";
+    }
+    return list;
+};
+PVP.save_speed = () => {
+    localStorage.setItem('pvp_speed', PVP.WSP);
+};
+PVP.WSPP = () => {
+    var speed = PVP.WSP;
+    if (speed < 10) speed = 10;
+    if (speed > 2000) speed = 2000;
+    if ($("#pvp_Panel input[name=speed_capt]").val() == '') speed = 50;
+    return speed / 50;
 };
 var RESP = {
     wait: 20,
@@ -1973,7 +1993,7 @@ var RES = {
     processing: false,
     mines: [],
     last_mine: 0,
-    speed: 90,
+    speed: 100,
     mined_id: [],
     refresh_mines: true,
     first_mine: []
@@ -2000,7 +2020,7 @@ RES.Start = function() {
     this.finder.setGrid(this.matrix);
     setTimeout(function() {
         RES.Action();
-    }, 100);
+    }, 120);
 };
 RES.Action = function() {
     this.stop = false;
@@ -2009,7 +2029,7 @@ RES.Action = function() {
     } else {
         setTimeout(function() {
             RES.Action();
-        }, 1000);
+        }, 1200);
     }
 };
 RES.GetCooldown = function() {
@@ -2105,7 +2125,7 @@ RES.Go = function() {
                                 RES.Move();
                             }, RES.speed);
                         }
-                    }, 1000);
+                    }, 1200);
                 }
             }
         });
@@ -2113,7 +2133,7 @@ RES.Go = function() {
     } else if (!this.stop && (GAME.char_data.x + "_" + GAME.char_data.y) == this.last_mine) {
         setTimeout(function() {
             RES.Mine();
-        }, 1000);
+        }, 1200);
         this.cdt = setTimeout(function() {
             GAME.loadMapJson(function() {
                 GAME.socket.emit('ga', {
@@ -2123,7 +2143,7 @@ RES.Go = function() {
             });
             setTimeout(function() {
                 RES.Start();
-            }, 2000);
+            }, 2400);
             $(".bt_cool").html("");
         }, this.GetCooldown());
     }
